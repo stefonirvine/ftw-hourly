@@ -52,13 +52,13 @@ export const filters = [
       // config value to that.
       //
       // See: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-      searchTimeZone: 'Etc/UTC',
+      searchTimeZone: 'CDT',
 
       // Options for the minimum duration of the booking
       options: [
-        { key: '0', label: 'Any length' },
-        { key: '60', label: '1 hour', shortLabel: '1h' },
-        { key: '120', label: '2 hours', shortLabel: '2h' },
+        { key: 'Day Shift', label: 'Day Shift', shortLabel: 'Days'},
+        { key: 'Evening Shift', label: 'Evening Shift', shortLabel: 'Evenings' },
+        { key: 'Night Shift', label: 'Night Shift', shortLabel: 'Nights' },
       ],
     },
   },
@@ -73,8 +73,8 @@ export const filters = [
     // Price filter configuration
     // Note: unlike most prices this is not handled in subunits
     config: {
-      min: 0,
-      max: 1000,
+      min: 15,
+      max: 100,
       step: 5,
     },
   },
@@ -92,8 +92,8 @@ export const filters = [
     config: {},
   },
   {
-    id: 'yogaStyles',
-    label: 'Yoga styles',
+    id: 'Nurse Qualifications',
+    label: 'Nurse Qualifications',
     type: 'SelectMultipleFilter',
     group: 'secondary',
     queryParamNames: ['pub_yogaStyles'],
@@ -107,12 +107,18 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'ashtanga', label: 'Ashtanga' },
-        { key: 'hatha', label: 'Hatha' },
-        { key: 'kundalini', label: 'Kundalini' },
-        { key: 'restorative', label: 'Restorative' },
-        { key: 'vinyasa', label: 'Vinyasa' },
-        { key: 'yin', label: 'Yin' },
+        { key: 'RPN', label: 'RPN' },
+        { key: 'RN', label: 'RN' },
+        { key: 'LPN', label: 'LPN' },
+        { key: 'HCA', label: 'HCA' },
+        { key: 'ER', label: 'ER' },
+        { key: 'NP', label: 'NP' },
+        { key: 'RPN-AP', label: 'RPN-AP' },
+        { key: 'ACLS', label: 'ACLS' },
+        { key: 'Student', label: 'Student' },
+        { key: 'Foot Care', label: 'Foot Care' },
+        { key: 'Maternity', label: 'Maternity' },
+        { key: 'Peds', label: 'Pediatrics' },
       ],
     },
   },
@@ -129,8 +135,13 @@ export const filters = [
       // to make filter customizations a bit easier.
       options: [
         { key: 'none', label: 'None', hideFromFilters: true, hideFromListingInfo: true },
-        { key: '200h', label: 'Registered yoga teacher 200h' },
-        { key: '500h', label: 'Registered yoga teacher 500h' },
+        { key: 'LPN', label: 'LPN In Good Standing' },
+        { key: 'RPN', label: 'RPN In Good Standing' },
+        { key: 'RN', label: 'RN In Good Standing' },
+        { key: 'NP', label: 'NP In Good Standing' },
+        { key: 'RPN-AP', label: 'RPN-AP In Good Standing' },
+        { key: 'HCA', label: 'Current nursing student with equivalent HCA training.' },
+        { key: 'HCA', label: 'Certified HCA In Good Standing.' },
       ],
     },
   },
